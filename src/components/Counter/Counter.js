@@ -18,17 +18,21 @@ export default class Counter extends Component {
     this.setState((currentState) => {
       const { count } = currentState;
       return {
-        count: count + 1
+        count: count + 1,
+        name: currentState.name === "Hou" ? "Moe" : "Hou"
       }
     });
   }
 
   handleDecrement = () => {
-    this.setState((currentState) => {
-      return {
-        count: currentState.count - 1
-      }
-    });
+    // check what the current count is, if it's greater than 0, then decrement the counter
+    if(this.state.count > 0) {
+      this.setState((currentState) => {
+        return {
+          count: currentState.count - 1
+        }
+      });
+    } 
   }
 
   render() {
