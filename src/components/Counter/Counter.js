@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import "./Counter.css";
 
-const INITIAL_COUNT = 7;
-
 export default class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: INITIAL_COUNT,
+      count: this.props.count,
       name: "Hou"
     }
   }
@@ -39,7 +37,7 @@ export default class Counter extends Component {
 
   handleReset = () => {
     this.setState({
-      count: INITIAL_COUNT
+      count: this.props.count
     });
   }
 
@@ -57,7 +55,7 @@ export default class Counter extends Component {
     }
 
     let resetClass;
-    if(this.state.count === INITIAL_COUNT) {
+    if(this.state.count === this.props.count) {
       resetClass = "Counter-reset-hide";
     }    
 

@@ -12,7 +12,7 @@ export default class App extends Component {
         My App
         <Welcome />
         <Person firstName="Hou" lastName="Chia"/>
-        <Counter />
+        <Counter count={9}/>
       </div>
     )
   }
