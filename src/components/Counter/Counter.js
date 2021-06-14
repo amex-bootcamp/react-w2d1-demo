@@ -13,15 +13,16 @@ export default class Counter extends Component {
 
   // when defining a method, use the arrow function syntax for proper `this` binding
   handleIncrement = () => {
-    console.log("hello world");
-    // update the count variable
-    this.setState((currentState) => {
-      const { count } = currentState;
-      return {
-        count: count + 1,
-        name: currentState.name === "Hou" ? "Moe" : "Hou"
-      }
-    });
+    if(this.state.count < 20) {
+      // update the count variable
+      this.setState((currentState) => {
+        const { count } = currentState;
+        return {
+          count: count + 1,
+          name: currentState.name === "Hou" ? "Moe" : "Hou"
+        }
+      });
+    } 
   }
 
   handleDecrement = () => {
