@@ -37,10 +37,13 @@ export default class Counter extends Component {
   }
 
   render() {
+    // dynamically add a class to the count
+    const counterClass = this.state.count > 10 ? "Counter-active" : "";
+
     return (
       <div className="Counter-container">
         <h1>{this.state.name}'s Counter App</h1>
-        <h2>{this.state.count}</h2>
+        <h2 className={counterClass}>{this.state.count}</h2>
         <button onClick={this.handleIncrement}>increment (+)</button>
         <button onClick={this.handleDecrement}>decrement (-)</button>
       </div>
