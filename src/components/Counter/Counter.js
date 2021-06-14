@@ -55,13 +55,15 @@ export default class Counter extends Component {
       counterClass = "Counter-green";
     }
 
+    const resetButton = this.state.count === 10 ? null : <button onClick={this.handleReset}>reset</button>
+    
     return (
       <div className="Counter-container">
         <h1>{this.state.name}'s Counter App</h1>
         <h2 className={counterClass}>{this.state.count}</h2>
         <button onClick={this.handleIncrement}>increment (+)</button>
         <button onClick={this.handleDecrement}>decrement (-)</button>
-        <button onClick={this.handleReset}>reset</button>
+        {resetButton}
       </div>
     )
   }
