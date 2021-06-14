@@ -15,9 +15,9 @@ export default class Counter extends Component {
     console.log("hello world");
     // update the count variable
     this.setState((currentState) => {
-      console.log(currentState);
+      const { count } = currentState;
       return {
-        count: currentState.count + 1
+        count: count + 1
       }
     })
   }
