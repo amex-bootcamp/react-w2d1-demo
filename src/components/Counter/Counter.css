@@ -5,3 +5,7 @@
 .Counter-green {
   color: green;
 }
+
+.Counter-reset-hide {
+  display: none;
+}
