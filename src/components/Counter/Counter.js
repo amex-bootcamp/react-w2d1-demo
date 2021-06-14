@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./Counter.css";
 
+
 export default class Counter extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,15 @@ export default class Counter extends Component {
       return {
         count: count + 1
       }
-    })
+    });
+  }
+
+  handleDecrement = () => {
+    this.setState((currentState) => {
+      return {
+        count: currentState.count - 1
+      }
+    });
   }
 
   render() {
@@ -28,6 +37,7 @@ export default class Counter extends Component {
         <h1>{this.state.name}'s Counter App</h1>
         <h2>{this.state.count}</h2>
         <button onClick={this.handleIncrement}>increment (+)</button>
+        <button onClick={this.handleDecrement}>decrement (-)</button>
       </div>
     )
   }
