@@ -8,14 +8,17 @@ export default class Counter extends Component {
       count: 10,
       name: "Hou"
     }
-    this.handleIncrement = this.handleIncrement.bind(this);
   }
 
-  handleIncrement () {
+  // when defining a method, use the arrow function syntax for proper `this` binding
+  handleIncrement = () => {
     console.log("hello world");
     // update the count variable
     this.setState((currentState) => {
       console.log(currentState);
+      return {
+        count: currentState.count + 1
+      }
     })
   }
 
