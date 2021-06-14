@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Welcome from "./components/Welcome/Welcome";
 import Person from "./components/Person/Person";
+import Counter from "./components/Counter/Counter";
 
 export default class App extends Component {
   render() {
@@ -9,6 +10,7 @@ export default class App extends Component {
         My App
         <Welcome />
         <Person firstName="Hou" lastName="Chia"/>
+        <Counter />
       </div>
     )
   }
