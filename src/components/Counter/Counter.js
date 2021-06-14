@@ -38,7 +38,16 @@ export default class Counter extends Component {
 
   render() {
     // dynamically add a class to the count
-    const counterClass = this.state.count > 10 ? "Counter-active" : "";
+    // const counterClass = this.state.count > 10 ? "Counter-active" : "";
+    
+    let counterClass;
+    // if count is greater than 10, the count should be red
+    if(this.state.count > 10) {
+      counterClass = "Counter-active"
+    } else if (this.state.count < 5) {
+    // if count is less than 5, the count should be green
+      counterClass = "Counter-green";
+    }
 
     return (
       <div className="Counter-container">
