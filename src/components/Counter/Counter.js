@@ -36,6 +36,12 @@ export default class Counter extends Component {
     } 
   }
 
+  handleReset = () => {
+    this.setState({
+      count: 10
+    });
+  }
+
   render() {
     // dynamically add a class to the count
     // const counterClass = this.state.count > 10 ? "Counter-active" : "";
@@ -43,7 +49,7 @@ export default class Counter extends Component {
     let counterClass;
     // if count is greater than 10, the count should be red
     if(this.state.count > 10) {
-      counterClass = "Counter-active"
+      counterClass = "Counter-active";
     } else if (this.state.count < 5) {
     // if count is less than 5, the count should be green
       counterClass = "Counter-green";
@@ -55,6 +61,7 @@ export default class Counter extends Component {
         <h2 className={counterClass}>{this.state.count}</h2>
         <button onClick={this.handleIncrement}>increment (+)</button>
         <button onClick={this.handleDecrement}>decrement (-)</button>
+        <button onClick={this.handleReset}>reset</button>
       </div>
     )
   }
