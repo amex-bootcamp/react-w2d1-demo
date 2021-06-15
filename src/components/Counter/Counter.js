@@ -12,6 +12,7 @@ export default class Counter extends Component {
 
   // when defining a method, use the arrow function syntax for proper `this` binding
   handleIncrement = () => {
+    // this.props.count = 11; // this will not work; you cannot update props
     if(this.state.count < 20) {
       // update the count variable
       this.setState((currentState) => {
