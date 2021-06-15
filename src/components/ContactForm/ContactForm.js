@@ -62,6 +62,15 @@ export default class ContactForm extends Component {
   };
 
   render() {
+    // check whether or not message is empty
+    if (this.state.submitted && this.state.message === "") {
+      return (
+        <section>
+          <p>Hey {this.state.firstName}, the message field cannot be empty</p>
+        </section>
+      );
+    }
+
     if (this.state.submitted) {
       return (
         <section>
