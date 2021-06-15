@@ -1,11 +1,6 @@
-import React, { Component } from 'react'
+import React from "react";
 
-export default class Welcome extends Component {
-  render() {
-    return (
-      <div>
-        Welcome to the Amex Bootcamp!
-      </div>
-    )
-  }
+function Welcome(props) {
+  return <div>Welcome to AMEX Bootcamp!</div>;
 }
+export default Welcome;
