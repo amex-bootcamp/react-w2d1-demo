@@ -30,10 +30,16 @@ export default class ContactForm extends Component {
     });
   };
 
+  handleMessageChange = (event) => {
+    this.setState({
+      message: event.target.value, // grab the value from the message input field
+    });
+  };
+
   render() {
     return (
       <div>
-        <h1>{`${this.state.firstName} ${this.state.lastName}`}</h1>
+        <h1>{`${this.state.firstName} ${this.state.lastName} ${this.state.message}`}</h1>
         <form>
           <ul>
             <li>
@@ -68,7 +74,13 @@ export default class ContactForm extends Component {
             </li>
             <li>
               <label htmlFor="message">Message:</label>
-              <input type="text" id="message" name="message" />
+              <input
+                type="text"
+                id="message"
+                name="message"
+                value={this.state.message}
+                onChange={this.handleMessageChange}
+              />
             </li>
             <button>Send contact form</button>
           </ul>
