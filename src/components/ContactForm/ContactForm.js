@@ -12,34 +12,40 @@ export default class ContactForm extends Component {
     };
   }
 
-  handleFirstNameChange = (event) => {
-    this.setState({
-      firstName: event.target.value, // grab the value from the first name input field
-    });
-  };
+  // handleFirstNameChange = (event) => {
+  //   this.setState({
+  //     firstName: event.target.value, // grab the value from the first name input field
+  //   });
+  // };
 
-  handleLastNameChange = (event) => {
-    this.setState({
-      lastName: event.target.value, // grab the value from the lastfirst name input field
-    });
-  };
+  // handleLastNameChange = (event) => {
+  //   this.setState({
+  //     lastName: event.target.value, // grab the value from the lastfirst name input field
+  //   });
+  // };
 
-  handleEmailChange = (event) => {
-    this.setState({
-      email: event.target.value, // grab the value from the email input field
-    });
-  };
+  // handleEmailChange = (event) => {
+  //   this.setState({
+  //     email: event.target.value, // grab the value from the email input field
+  //   });
+  // };
 
-  handleMessageChange = (event) => {
+  // handleMessageChange = (event) => {
+  //   this.setState({
+  //     message: event.target.value, // grab the value from the message input field
+  //   });
+  // };
+
+  handleChange = (event) => {
     this.setState({
-      message: event.target.value, // grab the value from the message input field
+      [event.target.name]: event.target.value,
     });
   };
 
   render() {
     return (
       <div>
-        <h1>{`${this.state.firstName} ${this.state.lastName} ${this.state.message}`}</h1>
+        <h1>{`${this.state.firstName} ${this.state.lastName}`}</h1>
         <form>
           <ul>
             <li>
@@ -49,7 +55,7 @@ export default class ContactForm extends Component {
                 id="firstName"
                 name="firstName"
                 value={this.state.firstName}
-                onChange={this.handleFirstNameChange}
+                onChange={this.handleChange}
               />
             </li>
             <li>
@@ -59,7 +65,7 @@ export default class ContactForm extends Component {
                 id="lastName"
                 name="lastName"
                 value={this.state.lastName}
-                onChange={this.handleLastNameChange}
+                onChange={this.handleChange}
               />
             </li>
             <li>
@@ -69,7 +75,7 @@ export default class ContactForm extends Component {
                 id="email"
                 name="email"
                 value={this.state.email}
-                onChange={this.handleEmailChange}
+                onChange={this.handleChange}
               />
             </li>
             <li>
@@ -79,7 +85,7 @@ export default class ContactForm extends Component {
                 id="message"
                 name="message"
                 value={this.state.message}
-                onChange={this.handleMessageChange}
+                onChange={this.handleChange}
               />
             </li>
             <button>Send contact form</button>
