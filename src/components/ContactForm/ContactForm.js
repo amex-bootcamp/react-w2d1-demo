@@ -5,6 +5,7 @@ export default class ContactForm extends Component {
     super(props);
 
     this.state = {
+      submitted: false,
       firstName: "",
       lastName: "",
       email: "",
@@ -42,11 +43,41 @@ export default class ContactForm extends Component {
     });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // update the submitted state to true
+    this.setState({
+      submitted: true,
+    });
+  };
+
+  handleReset = () => {
+    this.setState({
+      submitted: false,
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    });
+  };
+
   render() {
+    if (this.state.submitted) {
+      return (
+        <section>
+          <p>
+            Thank you, {this.state.firstName}, for submitting the form with the
+            following message: {this.state.message}
+          </p>
+          <button onClick={this.handleReset}>Reset Form</button>
+        </section>
+      );
+    }
+
     return (
       <div>
         <h1>{`${this.state.firstName} ${this.state.lastName}`}</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <ul>
             <li>
               <label htmlFor="firstName">First Name:</label>
