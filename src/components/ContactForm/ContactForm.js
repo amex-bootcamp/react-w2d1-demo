@@ -62,21 +62,23 @@ export default class ContactForm extends Component {
   };
 
   render() {
+    const { submitted, message, firstName, lastName, email } = this.state;
+
     // check whether or not message is empty
-    if (this.state.submitted && this.state.message === "") {
+    if (submitted && message === "") {
       return (
         <section>
-          <p>Hey {this.state.firstName}, the message field cannot be empty</p>
+          <p>Hey {firstName}, the message field cannot be empty</p>
         </section>
       );
     }
 
-    if (this.state.submitted) {
+    if (submitted) {
       return (
         <section>
           <p>
-            Thank you, {this.state.firstName}, for submitting the form with the
-            following message: {this.state.message}
+            Thank you, {firstName}, for submitting the form with the following
+            message: {message}
           </p>
           <button onClick={this.handleReset}>Reset Form</button>
         </section>
@@ -85,7 +87,7 @@ export default class ContactForm extends Component {
 
     return (
       <div>
-        <h1>{`${this.state.firstName} ${this.state.lastName}`}</h1>
+        <h1>{`${firstName} ${lastName}`}</h1>
         <form onSubmit={this.handleSubmit}>
           <ul>
             <li>
@@ -94,7 +96,7 @@ export default class ContactForm extends Component {
                 type="text"
                 id="firstName"
                 name="firstName"
-                value={this.state.firstName}
+                value={firstName}
                 onChange={this.handleChange}
               />
             </li>
@@ -104,7 +106,7 @@ export default class ContactForm extends Component {
                 type="text"
                 id="lastName"
                 name="lastName"
-                value={this.state.lastName}
+                value={lastName}
                 onChange={this.handleChange}
               />
             </li>
@@ -114,7 +116,7 @@ export default class ContactForm extends Component {
                 type="email"
                 id="email"
                 name="email"
-                value={this.state.email}
+                value={email}
                 onChange={this.handleChange}
               />
             </li>
@@ -124,7 +126,7 @@ export default class ContactForm extends Component {
                 type="text"
                 id="message"
                 name="message"
-                value={this.state.message}
+                value={message}
                 onChange={this.handleChange}
               />
             </li>
