@@ -15,6 +15,7 @@ export default class Counter extends Component {
     // this.props.count = 11; // this will not work; you cannot update props
     if(this.state.count < 20) {
       // update the count variable
+      // this.state.count = this.state.count + 1; // do not mutate state directly
       this.setState((currentState) => {
         const { count } = currentState;
         return {
