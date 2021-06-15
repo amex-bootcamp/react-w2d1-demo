@@ -5,10 +5,10 @@ export default class ContactForm extends Component {
     super(props);
 
     this.state = {
-      firstName: "Hou",
-      lastName: "Chia",
-      email: "houchia@gmail.com",
-      message: "message",
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
     };
   }
 
